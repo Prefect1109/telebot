@@ -2,14 +2,12 @@
 import telebot
 # import requests
 # from config import URL
-from config import token
+import config
 from telebot import types
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(config.token)
 print(bot.get_me())
 print("\n\t---------------Update-----------\n\t----------------!!!!-----------")
-# r = requests.get(URL+'/getMe')
-# print (r.json())
-# Обработчик команд '/start' и '/help'.
+
 @bot.message_handler(commands=['start'])
 def handle_text(message):
     bot.send_message(message.chat.id, "Привет))")
@@ -53,5 +51,5 @@ def handle_start_help(message):
      bot.send_message(message.chat.id, "C")
     else:
      bot.send_message(message.chat.id, "Выберите команду:\n/help\n/info\n/Google\n/CRM\n/contacts")
-bot.polling(none_stop=True)
+bot.polling(none_stop=True, interval=0)
 
