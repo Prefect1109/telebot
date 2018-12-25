@@ -32,7 +32,7 @@ def handle_start_help(message):
 def handle_start_help(message):
     bot.send_message(message.chat.id, "Ну давай")
     bot.send_message(message.chat.id, "Введите сколько есть кг\t")
-    x = float(input("Введите сколько есть \t"))
+    x = float(input)
     bot.send_message(message.chat.id, "Введите нужное кол-во А \t")
     a = float(input("Введите нужное кол-во А \t"))
     bot.send_message(message.chat.id, "Введите коф a \n")
