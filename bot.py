@@ -30,7 +30,52 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, "Onebox")
 @bot.message_handler(commands=['help'])
 def handle_start_help(message):
-    bot.send_message(message.chat.id, "Ничего нет)")
+    bot.send_message(message.chat.id, "Ну давай")
+    bot.send_message(message.chat.id, "Введите сколько есть кг\t")
+    x = float(input("Введите сколько есть \t"))
+    bot.send_message(message.chat.id, "Введите нужное кол-во А \t")
+    a = float(input("Введите нужное кол-во А \t"))
+    bot.send_message(message.chat.id, "Введите коф a \n")
+    a1 = float(input("Введите коф a \n"))
+    bot.send_message(message.chat.id, "Введите нужное кол-во B\t")
+    b = float(input("Введите нужное кол-во B\t"))
+    bot.send_message(message.chat.id, "Введите коф b\n")
+    b1 = float(input("Введите коф b\n"))
+    bot.send_message(message.chat.id, "Введите нужное кол-во C\t")
+    c = float(input("Введите нужное кол-во C\t"))
+    bot.send_message(message.chat.id, "Введите коф c\n")
+    c1 = float(input("Введите коф c\n"))
+    Order = (a + b + c)
+    result = x - Order
+    Cof = (round(a * a1) + round(b * b1) + round(c * c1))
+    i = 0
+    if Cof <= 0 and result < 0:
+        print("EROR Cof =0")
+        bot.send_message(message.chat.id, "EROR Cof =0")
+        exit(code=0)
+    else:
+        if result < 0:
+            while True:
+                x = x - Cof
+                a = a - round(a * a1)
+                b = b - round(b * b1)
+                c = c - round(c * c1)
+                i = i + 1
+                print("x:", x)
+                if x <= 0:
+                    print(i)
+                    break
+            print("a:", a)
+            print("b:", b)
+            print("a:", c)
+            bot.send_message(message.chat.id, "a:", a)
+            bot.send_message(message.chat.id, "b:", b)
+            bot.send_message(message.chat.id, "a:", c)
+            exit(code=0)
+
+        else:
+            print("Вистачає на всі замовлення")
+            bot.send_message(message.chat.id, "Вистачає на всі замовлення")
 @bot.message_handler(commands=['UA'])
 def handle_text(message):
     keyboard = types.InlineKeyboardMarkup()
@@ -52,4 +97,8 @@ def handle_start_help(message):
     else:
      bot.send_message(message.chat.id, "Выберите команду:\n/help\n/info\n/Google\n/CRM\n/contacts")
 bot.polling(none_stop=True, interval=0)
+
+
+
+
 
