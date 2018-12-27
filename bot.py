@@ -3,7 +3,7 @@ import telebot
 # import requests
 # from config import URL
 from telebot import types
-token = "621522847:AAGdNWBINmSNqyaRkohncLmESmwqUAZOcF4"
+token = "621522847:AAEAQe3iy8eypPWtI-0RHkvDbJKqsrKnvfg"
 bot = telebot.TeleBot(token)
 print(bot.get_me())
 print("\n\t---------------Update-----------\n\t----------------!!!!-----------")
